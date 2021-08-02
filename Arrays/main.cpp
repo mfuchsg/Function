@@ -6,8 +6,8 @@ void Print(int arr[], const int n);
 void Sort(int arr[], const int n);
 int Sum(int arr[], const int n);
 double Avg(int arr[], const int n);
-void minValueIn(int arr[], const int n);
-void maxValueIn(int arr[], const int n);
+int minValueIn(int arr[], const int n);
+int maxValueIn(int arr[], const int n);
 void ShiftLeft(int arr[], const int n);
 void ShiftRight(int arr[], const int n);
 
@@ -89,7 +89,7 @@ double Avg(int arr[], const int n)
 {
 	return (double)Sum(arr, n) / n;
 }
-void minValueIn(int arr[], const int n)
+int minValueIn(int arr[], const int n)
 {
 	int min = arr[0];
 	for (int i = 0; i < n; i++)
@@ -99,8 +99,9 @@ void minValueIn(int arr[], const int n)
 			min = arr[i];
 		}
 	}
+	return min;
 }
-void maxValueIn(int arr[], const int n)
+int maxValueIn(int arr[], const int n)
 {
 	int max = arr[n];
 	for (int i = n - 1; i > 0; i--)
@@ -110,6 +111,7 @@ void maxValueIn(int arr[], const int n)
 			max = arr[i];
 		}
 	}
+	return max;
 }
 void ShiftLeft(int arr[], const int n)
 {
@@ -139,5 +141,3 @@ void ShiftRight(int arr[], const int n)
 		arr[n - 1] = buffer;
 	}
 }
-
-
