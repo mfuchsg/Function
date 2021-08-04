@@ -1,16 +1,26 @@
 ﻿#include<iostream>
 using namespace std;
+using std::cin;
+using std::cout;
+using std::endl;
+
+//#define home_work
+
+const int ROWS = 3;
+const int COLS = 8;
 
 void FillRand(int arr[], const int n);
 void FillRand(short arr[], const int n);
 void FillRand(float arr[], const int n);
 void FillRand(double arr[], const int n);
+void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS);
 void FillRand(char arr[], const int n);
 
 void Print(int arr[], const int n);
 void Print(short arr[], const int n);
 void Print(float arr[], const int n);
 void Print(double arr[], const int n);
+void Print(int arr[ROWS][COLS], const int ROWS, const int COLS);
 void Print(char arr[], const int n);
 
 void Sort(int arr[], const int n);
@@ -55,6 +65,7 @@ void ShiftRight(char arr[], const int n);
 void main()
 {
 	setlocale(LC_ALL, "");
+#ifdef home_work
 	cout << "-------------------------INT-------------------" << endl;
 	const int n = 5;
 	int arr[n];
@@ -127,6 +138,11 @@ void main()
 	Print(srr, g);
 	ShiftRight(srr, g);
 	Print(srr, g);
+#endif // home_work
+
+	int i_arr_2[ROWS][COLS];
+	FillRand(i_arr_2, ROWS, COLS);
+	Print(i_arr_2, ROWS, COLS);
 }
 void FillRand(int arr[], const int n)
 {
@@ -158,6 +174,16 @@ void FillRand(float arr[], const int n)
 	{
 		arr[i] = float(rand() % 10000) / 100;
 
+	}
+}
+void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			arr[i][j] = rand() % 100;
+		}
 	}
 }
 void FillRand(char arr[], const int n)
@@ -199,6 +225,17 @@ void Print(float arr[], const int n)
 		cout << arr[i] << "\t";
 	}
 	cout << endl;
+}
+void Print(int arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			cout << arr[i][j] << "\t";
+		}
+		cout << endl;
+	}
 }
 void Print(char arr[], const int n)
 {
