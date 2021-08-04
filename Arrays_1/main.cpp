@@ -150,24 +150,4 @@ void main()
 	cout << "Отсортированный массив: " << endl;
 	Print(c_arr_2, ROWS, COLS);
 #endif // char_2D
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
